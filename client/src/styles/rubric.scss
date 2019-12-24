@@ -2,7 +2,7 @@
     border-radius: 15%;
     border: 1px black solid;
     font-weight: 900;
-    opacity: 70%;
+    // opacity: 70%;
     font-size: 3.5rem;
     height: 100%;
     width: 100%;
@@ -21,10 +21,4 @@
 
 .rubric-has-content{
     color: white;
-}
-
-.rubric-is-winner{
-    color: rgb(182, 78, 182);
-    font-size: 4 rem;
-    transition: 1s ease-out;
 }
