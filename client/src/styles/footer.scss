@@ -12,12 +12,11 @@
     display: inline;
 }
 
-i:hover{ 
+.i-grow{
+    margin-left: 2.5%;
+}
+.i-grow:hover{ 
     font-size: 1.5rem;
     color: rgb(170, 49, 170); 
     transition: 0.5s ease-out;
-}
-
-i{
-    margin-left: 1%;
 }

@@ -5,7 +5,7 @@ const Header = () => {
     <header>
       <nav className="navbar navbar-expend-lg bg-dark navbar-dark">
         <a className="navbar-brand" href="/">
-          <i className="fas fa-hashtag"></i>
+          <i className="fas fa-hashtag i-grow"></i>
         </a>
       </nav>
     </header>

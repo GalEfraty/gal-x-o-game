@@ -1,0 +1,35 @@
+main{
+    margin: 3%;    
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.board-table{
+    margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border-radius: 15px;
+    animation-duration: 2s;
+}
+
+td{
+    width: 12vh;
+    height: 15vh;
+    border-radius: 15px;
+}
+
+.td-left-border{
+    border-left: rgb(221, 218, 218) solid 7px;
+}
+
+.td-top-border{
+    border-top:  rgb(221, 218, 218) solid 7px;
+}
+
+.restart-btn{
+    margin-top: 2vh;
+    border-radius: 15px;
+    padding: 4%;
+    border: black solid 1%;
+    animation-duration: 2s;
+}

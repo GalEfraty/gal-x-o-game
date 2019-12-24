@@ -8,31 +8,31 @@ const Footer = () => {
       href="mailto:gal.efraty@gmail.com"
       className="text-decoration-none text-white"
     >
-      <i className="fas fa-envelope"></i>
+      <i className="fas fa-envelope i-grow"></i>
     </a>
       <a
         href="https://www.linkedin.com/in/gal-efraty-b0a422150"
         className="text-decoration-none text-white"
       >
-        <i className="fab fa-linkedin"></i>
+        <i className="fab fa-linkedin i-grow"></i>
       </a>
       <a
         href="https://github.com/GalEfraty"
         className="text-decoration-none text-white"
       >
-        <i className="fab fa-github"></i>
+        <i className="fab fa-github i-grow"></i>
       </a>
       <a
         href="https://www.facebook.com/galefraty"
         className="text-decoration-none text-white"
       >
-        <i className="fab fa-facebook-square"></i>
+        <i className="fab fa-facebook-square i-grow"></i>
       </a>
       <a
         href="https://www.instagram.com/galefraty/"
         className="text-decoration-none text-white"
       >
-        <i className="fab fa-instagram"></i>
+        <i className="fab fa-instagram i-grow"></i>
       </a>
     </footer>
   );
