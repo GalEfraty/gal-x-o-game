@@ -50,7 +50,7 @@ const Board = () => {
     <main>
       <CurrentPlayerDisplayer />
       <boardContext.Provider value={{ updateBoard, winnerState }}>
-        <table className="board-table animated bounceInLeft delay-1s">
+        <table className="board-table ">
           <tbody>
             <tr>
               <td>
