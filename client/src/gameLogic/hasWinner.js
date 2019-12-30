@@ -1,18 +1,5 @@
-// let initialBoardState = {
-//   1: "",
-//   2: "",
-//   3: "",
-//   4: "",
-//   5: "",
-//   6: "",
-//   7: "",
-//   8: "",
-//   9: ""
-// };
-//winner = {null / {player: ("X"/"O"), indexes: [1,2,3]}}
 
 const hasWinner = boardState => {
-  //console.log("boardState from hasWinner: ", boardState)
   const rowsWinner = hasWinnerInRows(boardState);
   if (rowsWinner) {
     return rowsWinner;
@@ -28,8 +15,6 @@ const hasWinner = boardState => {
 
   return null;
 };
-
-export default hasWinner;
 
 const hasWinnerInRows = boardState => {
   //123 - 456 - 789
@@ -99,3 +84,31 @@ const hasWinnerInDiagonals = boardState => {
 
   return null;
 };
+
+const isBoardEmpty = boardState => {
+  const keys = Object.keys(boardState);
+  for (let key in keys) {
+    if (boardState[key] !== "") {
+      return false;
+    }
+  }
+  return true;
+};
+
+const hasTie = boardState => {
+  // let boardStateX = {1: "X", 2: "X", 3: "O", 4: "O", 5: "O", 6: "X", 7: "X", 8: "O", 9: ""}
+  const keys = Object.keys(boardState);
+
+  for(let i = 1 ; i <= keys.length ; i++){
+    if (boardState[i] === "") {
+      // console.log("key iterate: ", i)
+      return false;
+    }
+  }
+
+  // console.log(keys)
+  // console.log("tie!")
+  return true;
+};
+
+export { hasWinner, isBoardEmpty, hasTie };

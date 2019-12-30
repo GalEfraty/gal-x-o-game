@@ -4,8 +4,9 @@ import "../styles/board.scss";
 import CurrentPlayerDisplayer from "./CurrentPlayerDisplayer";
 import playerContext from "../context/playerContext";
 import boardContext from "../context/boardContext";
-import hasWinner from "../gameLogic/hasWinner";
+import { hasWinner, hasTie } from "../gameLogic/hasWinner";
 import WinnerMessage from "../components/WinnerMessage";
+import TieMessage from "../components/TieMessage";
 
 let initialBoardState = {
   1: "",
@@ -23,14 +24,16 @@ const Board = () => {
   const { currentPlayer, switchPlayer } = useContext(playerContext);
   const [boardState, setBoardState] = useState(initialBoardState);
   const [winnerState, setwinner] = useState(null);
+  const [tieState, setTie] = useState(false);
+
   useEffect(() => {
-    //console.log("board state from board useEffect is: ", boardState);
     const winner = hasWinner(boardState);
+    const tie = hasTie(boardState);
     if (winner) {
       setwinner(winner);
-      console.log("winner: ", winner);
-
-      //also render a winner component!
+    }
+    if (tie) {
+      setTie(true);
     }
   }, [boardState]);
 
@@ -38,12 +41,15 @@ const Board = () => {
     let tempBoard = { ...boardState };
     tempBoard[rubricIndex] = currentPlayer;
     setBoardState(tempBoard);
-    switchPlayer();
+    if (!winnerState && !tieState) {
+      switchPlayer();
+    }
   };
 
   const initBoard = () => {
     setBoardState(initialBoardState);
     setwinner(null);
+    setTie(false);
   };
 
   return (
@@ -88,10 +94,16 @@ const Board = () => {
           </tbody>
         </table>
         {winnerState && <WinnerMessage />}
+        {tieState && <TieMessage />}
       </boardContext.Provider>
-      <button className="restart-btn btn btn-outline-dark animated bounceInUp delay-1s" onClick={initBoard}>
-        Restart Game!
-      </button>
+      {(winnerState || tieState) && (
+        <button
+          className="restart-btn btn btn-outline-dark animated heartBeat delay-1s"
+          onClick={initBoard}
+        >
+          Init board!
+        </button>
+      )}
     </main>
   );
 };

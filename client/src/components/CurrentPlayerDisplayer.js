@@ -6,7 +6,7 @@ const CurrrentUser = () => {
     const { currentPlayer } = useContext(playerContext)
     return (
         <div className="current-player-wrapper animated zoomIn delay-1s">
-            {currentPlayer}
+            Player: {currentPlayer}
         </div>
     )
 }
